@@ -1,5 +1,5 @@
 ---
-title: "exercici4"
+title: "exercici 4"
 output: html_document
 runtime: shiny
 ---
