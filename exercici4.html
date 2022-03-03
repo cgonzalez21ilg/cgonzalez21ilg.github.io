@@ -11,7 +11,7 @@
 
 
 
-<title>Exercici 1</title>
+<title>exercici4</title>
 
 <script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -32,9 +32,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="shared/selectize/js/selectize.min.js"></script>
-<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -275,28 +272,37 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Exercici 1</h1>
+<h1 class="title toc-ignore">exercici4</h1>
 
 </div>
 
 
-<div id="section-prueba-de-práctica-de-r" class="section level2">
-<h2>Prueba de Práctica de R</h2>
-<p>Aqui hay que insertar los plots y demás parafernalia</p>
-<p>A standard R plot can be made interactive by wrapping it in the Shiny
-<code>renderPlot()</code> function. The <code>selectInput()</code>
-function creates the input widget to drive the plot.</p>
-<div class="form-group shiny-input-container">
-<label class="control-label" id="breaks-label" for="breaks">Number of bins:</label>
-<div>
-<select id="breaks"><option value="10">10</option>
-<option value="20" selected>20</option>
-<option value="35">35</option>
-<option value="50">50</option></select>
-<script type="application/json" data-for="breaks" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+<div id="section-r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting
+syntax for authoring HTML, PDF, and MS Word documents. For more details
+on using R Markdown see <a href="http://rmarkdown.rstudio.com"
+class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be
+generated that includes both content as well as the output of any
+embedded R code chunks within the document. You can embed an R code
+chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
 </div>
-</div>
-<p><div id="out1eca8ccbaa0999f8" class="shiny-plot-output" style="width:100%;height:400px;"></div></p>
+<div id="section-including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="exercici4_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the
+code chunk to prevent printing of the R code that generated the
+plot.</p>
 </div>
 
 <p>Copyright &copy; 2022 RMarkdown Shiny ||  Meritxell y Carlos.</p>
