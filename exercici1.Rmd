@@ -1,5 +1,5 @@
 ---
-title: "Exercic1 1"
+title: "Exercici 1"
 ---
 
 ## Prueba de Práctica de R

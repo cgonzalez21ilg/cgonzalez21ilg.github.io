@@ -11,11 +11,13 @@ navbar:
       href: exercici2.html
     - text: "About"
       href: about.html
-      runtime: shiny
+      
     
 output:
   html_document:
     theme: united
     highlight: textmate
+    runtime: shiny
     include:
       after_body: footer.html
+    
