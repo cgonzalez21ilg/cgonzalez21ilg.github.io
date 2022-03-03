@@ -18,6 +18,7 @@ output:
     theme: united
     highlight: textmate
     runtime: shiny
+    renderplot:
     include:
       after_body: footer.html
     
