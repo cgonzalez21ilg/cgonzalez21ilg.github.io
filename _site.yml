@@ -11,6 +11,8 @@ navbar:
       href: exercici2.html
     - text: "Exercici 3"
       href: exercici3.html
+    - text: "Exercici 3"
+      href: exercici3.html
     - text: "About"
       href: about.html
       
