@@ -278,7 +278,21 @@ $(document).ready(function () {
 <h2>Prueba de Práctica de R</h2>
 <p>Aqui hay que insertar los plots y demás parafernalia</p>
 </div>
+<div id="ui.r" class="section level2">
+<h2>ui.R</h2>
+<p>library(shinydashboard)</p>
+<p>dashboardPage( dashboardHeader(), dashboardSidebar(),
+dashboardBody()</p>
+</div>
 <div id="app.r" class="section level2">
+<h2>app.R</h2>
+<p>library(shiny) library(shinydashboard)</p>
+<p>ui &lt;- dashboardPage( dashboardHeader(), dashboardSidebar(),
+dashboardBody() )</p>
+<p>server &lt;- function(input, output) { }</p>
+<p>shinyApp(ui, server)</p>
+</div>
+<div id="app.r-1" class="section level2">
 <h2>app.R</h2>
 <p>library(shinydashboard)</p>
 <p>ui &lt;- dashboardPage( dashboardHeader(title = “Basic dashboard”),
@@ -294,10 +308,31 @@ column) fluidRow( box(plotOutput(“plot1”, height = 250)),</p>
 rnorm(500)</p>
 <p>output<span class="math inline">\(plot1 &lt;- renderPlot({  data
 &lt;- histdata[seq_len(input\)</span>slider)] hist(data) }) }</p>
-<p>shinyApp(ui, server) ## Sidebar content dashboardSidebar(
-sidebarMenu( menuItem(“Dashboard”, tabName = “dashboard”, icon =
-icon(“dashboard”)), menuItem(“Widgets”, tabName = “widgets”, icon =
-icon(“th”)) ) )</p>
+<p>shinyApp(ui, server)</p>
+</div>
+<div id="sidebar-content" class="section level2">
+<h2>Sidebar content</h2>
+<p>dashboardSidebar( sidebarMenu( menuItem(“Dashboard”, tabName =
+“dashboard”, icon = icon(“dashboard”)), menuItem(“Widgets”, tabName =
+“widgets”, icon = icon(“th”)) ) )</p>
+</div>
+<div id="body-content" class="section level2">
+<h2>Body content</h2>
+<p>dashboardBody( tabItems( # First tab content tabItem(tabName =
+“dashboard”, fluidRow( box(plotOutput(“plot1”, height = 250)),</p>
+<pre><code>      box(
+        title = &quot;Controls&quot;,
+        sliderInput(&quot;slider&quot;, &quot;Number of observations:&quot;, 1, 100, 50)
+      )
+    )
+  ),
+
+  # Second tab content
+  tabItem(tabName = &quot;widgets&quot;,
+    h2(&quot;Widgets tab content&quot;)
+  )
+)</code></pre>
+<p>)</p>
 </div>
 
 <p>Copyright &copy; 2022 RMarkdown Shiny Meritxell y Carlos</p>

@@ -6,6 +6,30 @@ title: "Exercic1 1"
 
 Aqui hay que insertar los plots y demás parafernalia
 
+
+## ui.R ##
+library(shinydashboard)
+
+dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+  
+  
+## app.R ##
+library(shiny)
+library(shinydashboard)
+
+ui <- dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+)
+
+server <- function(input, output) { }
+
+shinyApp(ui, server)
+
 ## app.R ##
 library(shinydashboard)
 
@@ -36,6 +60,7 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
+
 ## Sidebar content
   dashboardSidebar(
     sidebarMenu(
@@ -43,4 +68,25 @@ shinyApp(ui, server)
       menuItem("Widgets", tabName = "widgets", icon = icon("th"))
     )
   )
+  
+## Body content
+  dashboardBody(
+    tabItems(
+      # First tab content
+      tabItem(tabName = "dashboard",
+        fluidRow(
+          box(plotOutput("plot1", height = 250)),
 
+          box(
+            title = "Controls",
+            sliderInput("slider", "Number of observations:", 1, 100, 50)
+          )
+        )
+      ),
+
+      # Second tab content
+      tabItem(tabName = "widgets",
+        h2("Widgets tab content")
+      )
+    )
+  )
