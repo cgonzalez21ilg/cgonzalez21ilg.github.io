@@ -1,0 +1,7 @@
+---
+title: "Exercic1 2"
+---
+
+## Prueba de Práctica de R
+
+Aqui hay que insertar los plots y demás parafernalia

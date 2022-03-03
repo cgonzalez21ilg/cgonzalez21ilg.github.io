@@ -5,8 +5,13 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Exercici 1"
+      href: exercici1.html
+    - text: "Exercici 2"
+      href: exercici2.html
     - text: "About"
       href: about.html
+    
 output:
   html_document:
     theme: united

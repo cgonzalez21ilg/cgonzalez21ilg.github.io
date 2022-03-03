@@ -1,7 +1,9 @@
 ---
-title: "My Website"
+title: "Práctica de Shiny"
 ---
 
-Hello, Website!
-
 ## Prueba de Práctica de R
+
+En el index se puede poner un resumen del trabajo, y alguna imagen, o enlaces
+directos a alguna cosa.
+
