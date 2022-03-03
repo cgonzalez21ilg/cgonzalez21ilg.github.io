@@ -32,6 +32,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -265,7 +268,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div id="section-header">
 
 
 
@@ -274,65 +277,23 @@ $(document).ready(function () {
 </div>
 
 
-<div id="prueba-de-práctica-de-r" class="section level2">
+<div id="section-prueba-de-práctica-de-r" class="section level2">
 <h2>Prueba de Práctica de R</h2>
 <p>Aqui hay que insertar los plots y demás parafernalia</p>
+<p>A standard R plot can be made interactive by wrapping it in the Shiny
+<code>renderPlot()</code> function. The <code>selectInput()</code>
+function creates the input widget to drive the plot.</p>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="breaks-label" for="breaks">Number of bins:</label>
+<div>
+<select id="breaks"><option value="10">10</option>
+<option value="20" selected>20</option>
+<option value="35">35</option>
+<option value="50">50</option></select>
+<script type="application/json" data-for="breaks" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
-<div id="ui.r" class="section level2">
-<h2>ui.R</h2>
-<p>library(shinydashboard)</p>
-<p>dashboardPage( dashboardHeader(), dashboardSidebar(),
-dashboardBody()</p>
 </div>
-<div id="app.r" class="section level2">
-<h2>app.R</h2>
-<p>library(shiny) library(shinydashboard)</p>
-<p>ui &lt;- dashboardPage( dashboardHeader(), dashboardSidebar(),
-dashboardBody() )</p>
-<p>server &lt;- function(input, output) { }</p>
-<p>shinyApp(ui, server)</p>
-</div>
-<div id="app.r-1" class="section level2">
-<h2>app.R</h2>
-<p>library(shinydashboard)</p>
-<p>ui &lt;- dashboardPage( dashboardHeader(title = “Basic dashboard”),
-dashboardSidebar(), dashboardBody( # Boxes need to be put in a row (or
-column) fluidRow( box(plotOutput(“plot1”, height = 250)),</p>
-<pre><code>  box(
-    title = &quot;Controls&quot;,
-    sliderInput(&quot;slider&quot;, &quot;Number of observations:&quot;, 1, 100, 50)
-  )
-)</code></pre>
-<p>) )</p>
-<p>server &lt;- function(input, output) { set.seed(122) histdata &lt;-
-rnorm(500)</p>
-<p>output<span class="math inline">\(plot1 &lt;- renderPlot({  data
-&lt;- histdata[seq_len(input\)</span>slider)] hist(data) }) }</p>
-<p>shinyApp(ui, server)</p>
-</div>
-<div id="sidebar-content" class="section level2">
-<h2>Sidebar content</h2>
-<p>dashboardSidebar( sidebarMenu( menuItem(“Dashboard”, tabName =
-“dashboard”, icon = icon(“dashboard”)), menuItem(“Widgets”, tabName =
-“widgets”, icon = icon(“th”)) ) )</p>
-</div>
-<div id="body-content" class="section level2">
-<h2>Body content</h2>
-<p>dashboardBody( tabItems( # First tab content tabItem(tabName =
-“dashboard”, fluidRow( box(plotOutput(“plot1”, height = 250)),</p>
-<pre><code>      box(
-        title = &quot;Controls&quot;,
-        sliderInput(&quot;slider&quot;, &quot;Number of observations:&quot;, 1, 100, 50)
-      )
-    )
-  ),
-
-  # Second tab content
-  tabItem(tabName = &quot;widgets&quot;,
-    h2(&quot;Widgets tab content&quot;)
-  )
-)</code></pre>
-<p>)</p>
+<p><div id="oute01b1b8587cf1159" class="shiny-plot-output" style="width:100%;height:400px;"></div></p>
 </div>
 
 <p>Copyright &copy; 2022 RMarkdown Shiny ||  Meritxell y Carlos.</p>
@@ -358,7 +319,7 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function () {
-  window.buildTabsets("TOC");
+  window.buildTabsets("section-TOC");
 });
 
 $(document).ready(function () {

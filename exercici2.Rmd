@@ -1,5 +1,6 @@
 ---
 title: "Exercici 2"
+runtime: shiny
 ---
 
 
