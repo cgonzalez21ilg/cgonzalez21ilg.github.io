@@ -1,7 +1,7 @@
-name: "my-website"
+name: "Práctica Shiny"
 output_dir: "."
 navbar:
-  title: "My Website"
+  title: "Shiny Exercices"
   left:
     - text: "Home"
       href: index.html
@@ -11,3 +11,5 @@ output:
   html_document:
     theme: united
     highlight: textmate
+    include:
+      after_body: footer.html
