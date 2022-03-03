@@ -9,6 +9,8 @@ navbar:
       href: exercici1.html
     - text: "Exercici 2"
       href: exercici2.html
+    - text: "Exercici 3"
+      href: exercici3.html
     - text: "About"
       href: about.html
       

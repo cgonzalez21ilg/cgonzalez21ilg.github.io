@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Exercici 3</title>
+
+<script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Shiny Exercices</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="exercici1.html">Exercici 1</a>
+</li>
+<li>
+  <a href="exercici2.html">Exercici 2</a>
+</li>
+<li>
+  <a href="exercici3.html">Exercici 3</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Exercici 3</h1>
+
+</div>
+
+
+<p>library(shiny) library(bslib) library(ggplot2) library(thematic)
+library(showtext) library(patchwork) library(glue)</p>
+<p>source(‘helpers.R’)</p>
+<div id="builds-theme-object-to-be-supplied-to-ui"
+class="section level1">
+<h1>Builds theme object to be supplied to ui</h1>
+<p>my_theme &lt;- bs_theme( bootswatch = “cerulean”, base_font =
+font_google(“Righteous”) ) %&gt;%
+bs_add_rules(sass::sass_file(“styles.scss”))</p>
+</div>
+<div id="let-thematic-know-to-use-the-font-from-bs_lib"
+class="section level1">
+<h1>Let thematic know to use the font from bs_lib</h1>
+<p>thematic_shiny(font = “auto”)</p>
+</div>
+<div
+id="we-have-an-already-build-station-to-city-df-we-are-using-for-lookups"
+class="section level1">
+<h1>We have an already build station to city df we are using for
+lookups</h1>
+<p>station_to_city &lt;- read_rds(here(“data/station_to_city.rds”))</p>
+</div>
+<div id="load-all-the-weather-normals-data-to-be-filtered-by-city"
+class="section level1">
+<h1>Load all the weather normals data to be filtered by city</h1>
+<p>temperature_data &lt;-
+arrow::read_feather(“data/temperature_data.feather”) precipitation_data
+&lt;- arrow::read_feather(“data/precipitation_data.feather”)</p>
+</div>
+<div
+id="some-cities-have-multiple-stations-but-we-only-want-users-to-see-unique-cities"
+class="section level1">
+<h1>Some cities have multiple stations but we only want users to see
+unique cities</h1>
+<p>unique_cities &lt;- unique(station_to_city$city)</p>
+</div>
+<div
+id="we-start-with-a-random-city-in-the-back-button-and-have-a-random-city-jump"
+class="section level1">
+<h1>We start with a random city in the back button and have a random
+city jump</h1>
+<p>button get_random_city &lt;- function(){ sample(unique_cities, 1)
+}</p>
+<p>ui &lt;- fluidPage( theme = my_theme, div(id = “page-top”,
+radioButtons(“current_theme”, “App Theme:”, c(“Light” = “cerulean”,
+“Dark” = “darkly”), inline = TRUE), div(class = “source_link”, a(href =
+“<a
+href="https://github.com/rstudio/shiny_app_stories/blob/master/weather_lookup/"
+class="uri">https://github.com/rstudio/shiny_app_stories/blob/master/weather_lookup/</a>”,
+“View source code on github”, icon(“github”))), ), div( id =
+“app-title”, titlePanel(“Explore your weather”), ), div(id = “header”,
+labeled_input(“prev_city_btn”, “Return to previous city”,
+actionButton(‘prev_city’, textOutput(‘prev_city_label’))),
+labeled_input(‘city-selector’, “Search for a city”,
+selectizeInput(‘city’, label = NULL, choices = c(““, unique_cities),
+multiple = FALSE)), labeled_input(”rnd_city_btn”, “Try a random city”,
+actionButton(‘rnd_city’, icon(‘dice’))) ), plotOutput(“weather_plot”,
+height = 850), div(id = “contributing_stations”, span(“Stations
+contributing data”), span(“Click on station to go to its dataset.”),
+uiOutput(‘station_info’) ), div(class = “small_text”, icon(“database”),
+“Data sourced from”, a(href = “<a
+href="https://www.ncdc.noaa.gov/data-access/land-based-station-data/"
+class="uri">https://www.ncdc.noaa.gov/data-access/land-based-station-data/</a>
+land-based-datasets/climate-normals”, “NOAA Climate Normals”),
+“generated by taking average temperatures from weather stations over the
+years 1982-2010.”, “For cities with multiple weather stations the
+average across all reporting stations is used.”), div(id =
+“source_link”, class = “source_link”, a(href = “<a
+href="https://github.com/rstudio/shiny_app_stories/blob/master/weather_lookup/"
+class="uri">https://github.com/rstudio/shiny_app_stories/blob/master/weather_lookup/</a>”,
+“View source code on github”, icon(“github”))) )</p>
+<p>server &lt;- function(input, output, session) { # If the URL contains
+a city on load, use that city instead of the default of ann arbor
+bookmarked_city &lt;- parse_url_hash(isolate(getUrlHash())) current_city
+&lt;- reactiveVal( if(bookmarked_city %in% unique_cities)
+bookmarked_city else “Ann Arbor, MI”) updateSelectizeInput(inputId =
+“city”, selected = isolate(current_city()))</p>
+<p># A book-keeping reactive so we can have a previous city button
+previous_city &lt;- reactiveVal(NULL)</p>
+<p>observe({ req(input<span class="math inline">\(city)  # Set the
+previous city to the non-updated current city. If app is just  #
+starting we want to populate the previous city button with a random
+city,  # not the current city  selected_city &lt;-
+isolate(current_city())  just_starting &lt;- selected_city ==
+input\)</span>city previous_city(if(just_starting) get_random_city()
+else selected_city)</p>
+<pre><code># Current city now can be updated to the newly selected city
+current_city(input$city)
+
+# Update the query string so the app will know what to do.
+updateQueryString(make_url_hash(current_city()), mode = &quot;push&quot;)</code></pre>
+<p>})</p>
+<p>observe({ updateSelectizeInput(inputId = “city”, selected =
+isolate(previous_city())) }) %&gt;% bindEvent(input$prev_city)</p>
+<p>observe({ updateSelectizeInput(inputId = “city”, selected =
+get_random_city()) }) %&gt;% bindEvent(input$rnd_city)</p>
+<p>city_data &lt;- reactive({ req(input$city, cancelOutput = TRUE)</p>
+<pre><code>withProgress(message = &#39;Fetching data from NOAA&#39;, {
+  incProgress(0, detail = &quot;Gathering all stations within city&quot;)
+  station_indices &lt;- which(station_to_city$city == input$city)
+  stations &lt;- station_to_city[station_indices, ] %&gt;%
+    mutate(url = build_station_url(station))
+
+
+  # Not every station has both temperature and precipitation data. To deal
+  # with this, loop through all stations in a city try to extract whatever
+  # data is present. If a city has a lot of stations, like Fairbanks, AK,
+  # this this can take a while
+  incProgress(1/4, detail = &quot;Downloading data from all found stations&quot;)
+
+  # If we have multiple stations with data we just collapse it to the mean
+  collapse_stations &lt;- . %&gt;%
+    group_by(date) %&gt;%
+    summarise_all(mean) %&gt;%
+    ungroup()
+
+  incProgress(2/4, detail = &quot;Extracting temperature data&quot;)
+  temperature_all &lt;- temperature_data %&gt;%
+    filter(station_index %in% station_indices) %&gt;%
+    mutate(
+      date = lubridate::mdy(paste(month, day, &quot;2000&quot;, sep = &quot;-&quot;), 
+      quiet = TRUE)
+    )
+
+  stations_with_temp &lt;- unique(temperature_all$station_index)
+
+  temperature &lt;- temperature_all %&gt;%
+    select(-month, -day, -station_index) %&gt;%
+    collapse_stations()
+
+
+  incProgress(3/4, detail = &quot;Extracting precipitation data&quot;)
+  precipitation_all &lt;- precipitation_data %&gt;%
+    filter(station_index %in% station_indices) %&gt;%
+    mutate(
+      date = lubridate::mdy(paste(month, &quot;1&quot;, &quot;2000&quot;, sep = &quot;-&quot;), 
+      quiet = TRUE)
+    ) %&gt;%
+    rename(avg_precipitation = avg)
+  stations_with_precip &lt;- unique(precipitation_all$station_index)
+
+  precipitation &lt;- precipitation_all %&gt;%
+    select(-month, -station_index) %&gt;%
+    collapse_stations()
+
+
+  incProgress(1, detail = &quot;Packaging data for app&quot;)
+  list(temperature = temperature,
+       precipitation = precipitation,
+       has_temp = nrow(temperature) != 0,
+       has_prcp = nrow(precipitation) != 0,
+       station_info = stations %&gt;%
+         mutate(had_temp = station_indices %in% stations_with_temp,
+                had_prcp = station_indices %in% stations_with_precip)
+
+  )
+})</code></pre>
+<p>}) %&gt;% # Our results will always be the same for a given city, so
+cache on that key bindCache(input$city)</p>
+<p>output<span class="math inline">\(station_info &lt;- renderUI({  #
+Let the user know what stations went into the plot they&#39;re seeing
+and  # allow them to explore the data
+directly  pmap(city_data()\)</span>station_info, function(url, station,
+had_temp, had_prcp, …){ div(class = “station_bubble”, a(href = url,
+target = “_blank”, station, if(had_temp) icon(‘thermometer-half’),
+if(had_prcp) icon(‘cloud-rain’))) }) })</p>
+<p>output$prev_city_label &lt;- renderText({ previous_city() })</p>
+<p>output$weather_plot &lt;- renderPlot({ req(city_data())</p>
+<pre><code>withProgress(message = &#39;Building plots&#39;, max = 3, {
+
+  incProgress(1, detail = &quot;Building temperature plot&quot;)
+  temp_plot &lt;- if(city_data()$has_temp) {
+    build_temp_plot(city_data()$temperature)
+  } else {
+    themed_text(glue(&quot;Sorry, no temperature data is available for 
+    {input$city}, try a nearby city.&quot;))
+  }
+
+  incProgress(2, detail = &quot;Building precipitation plot&quot;)
+  prcp_plot &lt;- if(city_data()$has_prcp) {
+    build_prcp_plot(city_data()$precipitation)
+  } else {
+    themed_text(glue(&quot;Sorry, no precipitation data is available for 
+    {input$city}, try a nearby city.&quot;))
+  }
+
+  # Setup layout such that temperature data is top large plot unless it is 
+  missing when precipitation is the top plot
+  incProgress(3, detail = &quot;Merging plots&quot;)
+  p &lt;- if(city_data()$has_temp){
+    temp_plot / prcp_plot
+  } else {
+    prcp_plot / temp_plot
+  }
+message(&quot;Generating plot with no cache&quot;)
+  p +
+    plot_layout(heights = c(2, 1)) +
+    plot_annotation(title = glue(&#39;Weather normals over the year for 
+    {input$city}&#39;),
+                    caption = glue(&quot;See more at 
+                    connect.rstudioservices.com/explore_your_weather/
+                    {make_url_hash(input$city)}&quot;),
+                    theme = theme(plot.title = element_text(size = 30, 
+                    hjust = 0.5))) &amp;
+    scale_x_date(name = &quot;&quot;, date_labels = &quot;%b&quot;, breaks = twelve_month_seq,
+                 minor_breaks = NULL, expand = expansion(mult = c(0, 0))) &amp;
+    theme(text = element_text(size = 18),
+          axis.text.x = element_text(hjust = 0),
+          # Make background grid lines a bit more prominent to make precise
+          # reading of chart easier
+          panel.grid.major = element_line(color = &quot;grey70&quot;, size = 0.2),
+          panel.grid.minor = element_line(color = &quot;grey85&quot;, size = 0.2))
+})</code></pre>
+<p>}) %&gt;% bindCache(input<span class="math inline">\(city,
+getCurrentOutputInfo()\)</span>fg(), sizePolicy = sizeGrowthRatio(width
+= 400, height = 600))</p>
+<p>observe({ # Make sure theme is kept current with desired session<span
+class="math inline">\(setCurrentTheme(  bs_theme_update(my_theme,
+bootswatch = input\)</span>current_theme) ) }) }</p>
+</div>
+<div id="run-the-application" class="section level1">
+<h1>Run the application</h1>
+<p>shinyApp(ui = ui, server = server)</p>
+</div>
+
+<p>Copyright &copy; 2022 RMarkdown Shiny ||  Meritxell y Carlos.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
