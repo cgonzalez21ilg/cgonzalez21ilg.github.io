@@ -7,3 +7,5 @@ title: "Práctica de Shiny"
 En el index se puede poner un resumen del trabajo, y alguna imagen, o enlaces
 directos a alguna cosa.
 
+
+![imagen R](https://cdn.conceptosclaros.com/wp-content/uploads/2016/07/RStudio-Ball.png)
