@@ -278,6 +278,27 @@ $(document).ready(function () {
 <h2>Prueba de Práctica de R</h2>
 <p>Aqui hay que insertar los plots y demás parafernalia</p>
 </div>
+<div id="app.r" class="section level2">
+<h2>app.R</h2>
+<p>library(shinydashboard)</p>
+<p>ui &lt;- dashboardPage( dashboardHeader(title = “Basic dashboard”),
+dashboardSidebar(), dashboardBody( # Boxes need to be put in a row (or
+column) fluidRow( box(plotOutput(“plot1”, height = 250)),</p>
+<pre><code>  box(
+    title = &quot;Controls&quot;,
+    sliderInput(&quot;slider&quot;, &quot;Number of observations:&quot;, 1, 100, 50)
+  )
+)</code></pre>
+<p>) )</p>
+<p>server &lt;- function(input, output) { set.seed(122) histdata &lt;-
+rnorm(500)</p>
+<p>output<span class="math inline">\(plot1 &lt;- renderPlot({  data
+&lt;- histdata[seq_len(input\)</span>slider)] hist(data) }) }</p>
+<p>shinyApp(ui, server) ## Sidebar content dashboardSidebar(
+sidebarMenu( menuItem(“Dashboard”, tabName = “dashboard”, icon =
+icon(“dashboard”)), menuItem(“Widgets”, tabName = “widgets”, icon =
+icon(“th”)) ) )</p>
+</div>
 
 <p>Copyright &copy; 2022 RMarkdown Shiny Meritxell y Carlos</p>
 
