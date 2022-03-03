@@ -268,7 +268,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div id="section-header">
 
 
 
@@ -280,26 +280,27 @@ $(document).ready(function () {
 <p>library(shiny) library(bslib) library(ggplot2) library(thematic)
 library(showtext) library(patchwork) library(glue)</p>
 <p>source(‘helpers.R’)</p>
-<div id="builds-theme-object-to-be-supplied-to-ui"
+<div id="section-builds-theme-object-to-be-supplied-to-ui"
 class="section level1">
 <h1>Builds theme object to be supplied to ui</h1>
 <p>my_theme &lt;- bs_theme( bootswatch = “cerulean”, base_font =
 font_google(“Righteous”) ) %&gt;%
 bs_add_rules(sass::sass_file(“styles.scss”))</p>
 </div>
-<div id="let-thematic-know-to-use-the-font-from-bs_lib"
+<div id="section-let-thematic-know-to-use-the-font-from-bs_lib"
 class="section level1">
 <h1>Let thematic know to use the font from bs_lib</h1>
 <p>thematic_shiny(font = “auto”)</p>
 </div>
 <div
-id="we-have-an-already-build-station-to-city-df-we-are-using-for-lookups"
+id="section-we-have-an-already-build-station-to-city-df-we-are-using-for-lookups"
 class="section level1">
 <h1>We have an already build station to city df we are using for
 lookups</h1>
 <p>station_to_city &lt;- read_rds(here(“data/station_to_city.rds”))</p>
 </div>
-<div id="load-all-the-weather-normals-data-to-be-filtered-by-city"
+<div
+id="section-load-all-the-weather-normals-data-to-be-filtered-by-city"
 class="section level1">
 <h1>Load all the weather normals data to be filtered by city</h1>
 <p>temperature_data &lt;-
@@ -307,14 +308,14 @@ arrow::read_feather(“data/temperature_data.feather”) precipitation_data
 &lt;- arrow::read_feather(“data/precipitation_data.feather”)</p>
 </div>
 <div
-id="some-cities-have-multiple-stations-but-we-only-want-users-to-see-unique-cities"
+id="section-some-cities-have-multiple-stations-but-we-only-want-users-to-see-unique-cities"
 class="section level1">
 <h1>Some cities have multiple stations but we only want users to see
 unique cities</h1>
 <p>unique_cities &lt;- unique(station_to_city$city)</p>
 </div>
 <div
-id="we-start-with-a-random-city-in-the-back-button-and-have-a-random-city-jump"
+id="section-we-start-with-a-random-city-in-the-back-button-and-have-a-random-city-jump"
 class="section level1">
 <h1>We start with a random city in the back button and have a random
 city jump</h1>
@@ -497,7 +498,7 @@ getCurrentOutputInfo()\)</span>fg(), sizePolicy = sizeGrowthRatio(width
 class="math inline">\(setCurrentTheme(  bs_theme_update(my_theme,
 bootswatch = input\)</span>current_theme) ) }) }</p>
 </div>
-<div id="run-the-application" class="section level1">
+<div id="section-run-the-application" class="section level1">
 <h1>Run the application</h1>
 <p>shinyApp(ui = ui, server = server)</p>
 </div>
@@ -525,7 +526,7 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function () {
-  window.buildTabsets("TOC");
+  window.buildTabsets("section-TOC");
 });
 
 $(document).ready(function () {

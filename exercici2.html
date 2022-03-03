@@ -32,6 +32,12 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
+<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="shared/strftime/strftime-min.js"></script>
+<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -277,7 +283,51 @@ $(document).ready(function () {
 </div>
 
 
-<p><iframe data-deferred-src="app2524b34c9be60a82911580eac135758e/?w=&amp;__subapp__=1" width="100%" height="500" class="shiny-frame shiny-frame-deferred"></iframe></p>
+<div id="section-column" class="section level2 sidebar">
+<h2 class="sidebar">Column</h2>
+<p>Waiting time between eruptions and the duration of the eruption for
+the Old Faithful geyser in Yellowstone National Park, Wyoming, USA.</p>
+<pre class="r"><code>selectInput(
+  &quot;n_breaks&quot;, label = &quot;Number of bins:&quot;,
+  choices = c(10, 20, 35, 50), selected = 20
+)</code></pre>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="n_breaks-label" for="n_breaks">Number of bins:</label>
+<div>
+<select id="n_breaks"><option value="10">10</option>
+<option value="20" selected>20</option>
+<option value="35">35</option>
+<option value="50">50</option></select>
+<script type="application/json" data-for="n_breaks" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+</div>
+</div>
+<pre class="r"><code>sliderInput(
+  &quot;bw_adjust&quot;, label = &quot;Bandwidth adjustment:&quot;,
+  min = 0.2, max = 2, value = 1, step = 0.2
+)</code></pre>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="bw_adjust-label" for="bw_adjust">Bandwidth adjustment:</label>
+<input class="js-range-slider" id="bw_adjust" data-skin="shiny" data-min="0.2" data-max="2" data-from="1" data-step="0.2" data-grid="true" data-grid-num="9" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+</div>
+</div>
+<div id="section-column-1" class="section level2">
+<h2>Column</h2>
+<div id="section-geyser-eruption-duration" class="section level3">
+<h3>Geyser Eruption Duration</h3>
+<pre class="r"><code>renderPlot({
+  erpt = faithful$eruptions
+  hist(
+    erpt, probability = TRUE, breaks = as.integer(input$n_breaks),
+    xlab = &quot;Duration (minutes)&quot;, main = &quot;Geyser Eruption Duration&quot;,
+    col = &#39;gray&#39;, border = &#39;white&#39;
+  )
+  
+  dens = density(erpt, adjust = input$bw_adjust)
+  lines(dens, col = &quot;blue&quot;, lwd = 2)
+})</code></pre>
+<p><div id="out3329b76b491c41f2" class="shiny-plot-output" style="width:100%;height:400px;"></div></p>
+</div>
+</div>
 
 <p>Copyright &copy; 2022 RMarkdown Shiny ||  Meritxell y Carlos.</p>
 
