@@ -17,8 +17,7 @@ navbar:
       href: exercici5.html
     - text: "About"
       href: about.html
-    - text: "Exercici 5"
-      href: exercici5.html
+   
     
 output:
   html_document:

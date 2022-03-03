@@ -1,0 +1,12 @@
+---
+title: "exercici5"
+output: html_document
+runtime: shiny
+---
+
+```{r, echo = FALSE}
+shinyAppDir(
+  system.file("examples/06_tabsets", package="shiny"),
+  options = list(width = "100%", height = 700)
+)
+```
